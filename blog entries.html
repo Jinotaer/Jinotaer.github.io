@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jinotaer</title>
+    <style>
+      /* Reset default margin, padding, and box-sizing for all elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styles */
+      body {
+        font-family: "Oxygen", sans-serif;
+        color: #050505;
+        font-family: 'Times New Roman', Times, serif;
+        background-image: url(photos/pin6.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+      }
+
+      /* Header styles */
+      .header {
+        background-color: #0b0c10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 18px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+
+      /* Jino's name styles */
+      .jino {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color: beige;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Logo color */
+      .logo {
+        color: red;
+      }
+
+      /* Navigation bar styles */
+      .navbar a {
+        font-size: 22px;
+        color: beige;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 32px;
+      }
+
+      /* Navigation link hover and active styles */
+      .navbar a:hover,
+      .navbar a.active {
+        color: red;
+      }
+
+      /* Blog title styles */
+      .blog {
+        color: beige;
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        margin-top: 6%;
+        margin-bottom: 3%;
+      }
+
+      /* IT span styles */
+      .IT {
+        color: red;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      /* Main container styles */
+      .main {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 5%;
+        
+      }
+
+      /* Cards container styles */
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+       
+      }
+
+      /* Individual card item styles */
+      .cards_item {
+        display: flex;
+        padding: 1rem;
+        
+      }
+
+      /* Card image styles */
+      .card_image {
+        position: relative;
+        max-height: 250px;
+        transform-origin: center;
+        transform: scale(var(--img-scale));
+        transition: transform 0.4s ease-in-out;
+      }
+
+      /* Hover effect for card image */
+      .card:has(:hover, :focus) {
+        --img-scale: 1.1;
+      }
+
+      /* Card image content styles */
+      .card_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Media queries for responsive design */
+      @media (min-width: 40rem) {
+        .cards_item {
+          width: 50%;
+        }
+      }
+
+      @media (min-width: 56rem) {
+        .cards_item {
+          width: 33.3333%;
+        }
+      }
+      @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(245, 222, 179, 0.658); 
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(245, 222, 179, 0.708); 
+            }
+        }
+      /* Card container styles */
+      .card {
+        background-color: white;
+        border-radius: 0.25rem;
+        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: glow 1s infinite alternate;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Card content styles */
+      .card_content {
+        position: relative;
+        padding: 16px 12px 32px 24px;
+        margin: 16px 8px 8px 0;
+        max-height: 290px;
+        overflow-y: scroll;
+      }
+
+      /* Scrollbar styles for card content */
+      .card_content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .card_content::-webkit-scrollbar-track {
+        box-shadow: 0;
+        border-radius: 0;
+      }
+
+      .card_content::-webkit-scrollbar-thumb {
+        background: #c89b3f;
+        border-radius: 15px;
+      }
+
+      /* Card title styles */
+      .card_title {
+        position: relative;
+        margin: 0 0 24px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      /* Line after card title */
+      .card_title::after {
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #c89b3f;
+        content: "";
+      }
+
+      /* Horizontal line separator */
+      hr {
+        margin: 24px auto;
+        width: 50px;
+        border-top: 2px solid #c89b3f;
+      }
+
+      /* Card text styles */
+      .card_text p {
+        margin: 0 0 24px;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .card_text p:last-child {
+        margin: 0;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #0b0c10;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Footer paragraph styles */
+      footer p {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header and Home sections -->
+    <header class="header">
+      <!-- Jino's name and logo -->
+      <h2 class="jino">jino<span class="logo">Taer.</span></h2>
+      <!-- Navigation bar -->
+      <nav class="navbar">
+        <ul>
+          <!-- Navigation links -->
+          <a href="index.html">HOME</a>
+          <a class="active" href="blog entries.html">BLOG</a>
+          <a href="flex.html">FLEX</a>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Blog title -->
+    <h2 class="blog"> IT-111<span class="IT"> BLOG'S</span></h2>
+
+    <!-- Main content section with cards -->
+    <div class="main">
+      <ul class="cards">
+        <!-- First card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/Screenshot1.png" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">CHAPTER I: WHAT IS COMPUTING</h2>
+              <div class="card_text">
+                <p>This chapter explores how computers are central to our daily lives through new applications and activities Debit cards and smartphones, have been growing for a long time. It highlights key events, from the era From large appliances to modern compact and powerful appliances, there are even advances like vacuums tubes and transistors. Continued development of computers, social impact, . and the constant pursuit of progress and speed.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Second card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/screenshot3.jpg" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">CHAPTER II: PROFESSIONS & CAREERS IN COMPUTING</h2>
+              <div class="card_text">
+                <p>This chapter examines various computing tasks, emphasizing the broad role of computing in modern life. It focuses on specific job groups, such as database analytics and software engineering, which identify core activities such as systems analysts. The chapter highlights and promotes the growing potential of computer-related careers To enable students to visualize their future contributions to organizations and society.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Third card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/screenshot4.jpg" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">CHAPTER III: THE INFORMATION PROCESSING CYCLE</h2>
+              <div class="card_text">
+                <p>The chapter describes the information processing cycle in detail and outlines the various processes used Information, such as input, use, storage, and output. This highlights the difference data (fake facts) and information (structured, useful data). It explains that data processing includes turning raw data into valuable insights.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Second set of cards -->
+    <div class="main">
+      <ul class="cards">
+        <!-- Fourth card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/Screenshot 5.png" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">CHAPTER IV: INTRODUCTION TO COMPUTER SYSTEMS</h2>
+              <div class="card_text">
+                <p>This chapter describes computer systems that include hardware (physical), . software (manuals), peopleware (users), and dataware (data management tools). It shows that The interconnectedness of these factors. Overall, the courses provide a rough overview of how computers work information processing, components, and roles in collaborative work to develop computers More effective systems for different purposes.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Fifth card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/Screenshot6.png" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">CHAPTER V: BASIC CONCEPT OF COMPUTER SECURITY</h2>
+              <div class="card_text">
+                <p>This chapter covers the basics of cybersecurity, emphasizing its importance Data protection by means such as encryption. It leads to division of information and addresses that protect personal information. The text examines the prevalence and types of cybercrime cybercriminals, and countermeasures, including network encryption and cyber liability insurance.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Sixth card item -->
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="photos/Screenshot7.png" />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">THE MOST CHALLENGING LESSON</h2>
+              <div class="card_text">
+                <p>It is a very challenging lesson in my introduction to my computer course It involves HTML and CSS. These talks help me overcome procrastination, especially in our finals A project to build a personal website, providing a clear roadmap for creating web content. Understanding HTML and CSS broadens my perspective on web design, boosts my confidence and. Inspiration when I capture every element and style. Now, building a website can feel like an exciting challenge, . It allows you to express creativity and overcome challenges step by step</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer section with credits -->
+    <footer>
+      <p>Credits &copy; 2023 Jino Taer</p>
+    </footer>
+  </body>
+</html>

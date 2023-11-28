@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Viewport settings for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title of the webpage -->
+  <title>jino taer</title>
+ 
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+    /* Resetting default margin, padding, and box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #0b0c10;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 13px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    /* Jino's name styles */
+    .jino {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 25px;
+      color: beige;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Logo color */
+    .logo {
+      color: red;
+    }
+
+    /* Navigation bar styles */
+    .navbar a {
+      font-size: 20px;
+      color: beige;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 35px;
+    }
+
+    /* Navigation link hover and active styles */
+    .navbar a:hover,
+    .navbar a.active {
+      color: red;
+    }
+
+    /* Home section styles */
+    .home {
+      background-image: url(photos/pin6.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+	    background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+    }
+
+    /* Home content styles */
+    .home-content {
+      max-width: 700px;
+    }
+
+    /* Home content heading styles */
+    .home-content h1 {
+      font-size: 57px;
+      font-weight: bold;
+      color: beige;
+    }
+
+    /* Home content subheading styles */
+    .home-content h2 {
+      font-size: 40px;
+      font-weight: bold;
+      color: red;  
+    }
+
+    /* Home content paragraph styles */
+    .home-content p {
+      font-size: 37px;
+      margin: 10px 0;
+      color: beige;
+    }
+
+    /* Social media links container styles */
+    .socials { 
+      text-align: left;
+      font-size: 12px;
+      padding: 0px;
+      border-radius: 10px;
+      display: flex;
+      align-items: left;
+    }
+
+    /* Social media icon styles */
+    .socials img {
+      border-radius: 50%;
+      max-width: 100%;
+      height: 40px;
+      margin-left: 15px;
+      margin-right: 15px;
+      border:none;
+    }
+
+    /* Social media icon hover effect styles */
+    .socials img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px black; 
+      animation: glow 1s infinite alternate;
+    }
+
+    /* About Me section styles */
+    .home-content .about {
+      display: flex;
+    }
+
+    /* Profile picture styles */
+    .pic {
+      display: block;
+      float: right;
+      margin-left: 100px;
+      width: 350px;
+      border-radius: 30%;
+      height: 180%;
+      box-shadow: 0 0 10px black; 
+      animation: glow 1s infinite alternate;
+    }
+
+    /* Click button styles */
+    .click-button {
+      background-color: rgba(8, 28, 57, 0.714);
+      border-style: none;
+      color: white;
+      height: 50px;
+      width: 150px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: .5s;
+      font-size: 25px;
+      margin-left: 20px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* Click button hover effect styles */
+    .click-button:hover {
+      background-color: red;
+      transform: scale(1.2);
+      box-shadow: 0 0 20px black; 
+      animation: glow 1s infinite alternate;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #0b0c10;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Footer paragraph styles */
+    footer p {
+      text-align: center;
+    }
+
+    /* Glowing effects animation */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px beige;
+      }
+
+      100% {
+        box-shadow: 0 0 20px beige;
+      }
+    }
+
+    /* Media Queries for Responsive Design */
+
+    /* Tablet styles */
+    @media (max-width: 768px) {
+      .header {
+        padding: 13px 5%;
+      }
+
+      .navbar a {
+        margin-left: 10px;
+      }
+
+      .home {
+        padding: 0 5%;
+      }
+
+      .home-content h1 {
+        font-size: 30px;
+      }
+
+      .home-content h2 {
+        font-size: 25px;
+      }
+
+      .home-content p {
+        font-size: 20px;
+      }
+
+      .socials img {
+        height: 25px;
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+
+      .pic {
+        margin-left: 30px;
+        width: 200px;
+        height: 110%;
+      }
+
+      .click-button {
+        height: 35px;
+        width: 100px;
+        font-size: 16px;
+        margin-left: 8px;
+      }
+    }
+
+    /* Mobile styles */
+    @media (max-width: 480px) {
+      .header {
+        padding: 13px 5%;
+      }
+
+      .navbar a {
+        font-size: 18px;
+        margin-left: 8px;
+      }
+
+      .home {
+        padding: 0 5%;
+      }
+
+      .home-content h1 {
+        font-size: 25px;
+      }
+
+      .home-content h2 {
+        font-size: 20px;
+      }
+
+      .home-content p {
+        font-size: 16px;
+      }
+
+      .socials img {
+        height: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .pic {
+        margin-left: 20px;
+        width: 150px;
+        height: 90%;
+      }
+
+      .click-button {
+        height: 30px;
+        width: 80px;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header and Home sections -->
+  <header class="header">
+    <!-- Jino's name and logo -->
+    <h2 class="jino">jino<span class="logo">Taer.</span></h2>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <ul>
+        <!-- Navigation links -->
+        <a class="active" href="index.html">HOME</a>
+        <a href="blog entries.html">BLOG</a>
+        <a href="flex.html">FLEX</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home section -->
+  <section class="home">
+    <!-- Home content including personal information and social links -->
+    <div class="home-content">
+      <h1>IT-111 FINAL OUTPUT PRESENTATION</h1>
+      <h2> JINO ASINTISTA TAER</h2>
+      <p>BSIT</p>
+      <p>BUKIDNON STATE UNIVERSITY</p>
+      <div class="socials">
+        <!-- Social media icons -->
+        <a href="https://www.facebook.com/jinoasintista.taer">
+          <img src="photos/face.jpg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/jinotaer/">
+          <img src="photos/inst.jpg" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/">
+          <img src="photos/OIP (1).jpg" alt="Twitter">
+        </a>
+        <!-- About Me button -->
+        <a href="aboutme.html">
+          <button class="click-button">ABOUT ME</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Profile picture -->
+    <div>
+      <img class="pic" src="photos/pic2.jpg">
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <footer>
+    <!-- Credits information -->
+    <p>Credits &copy; 2023 Jino Taer</p>
+  </footer>
+</body>
+</html>

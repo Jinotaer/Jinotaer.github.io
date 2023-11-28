@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set, compatibility, and viewport -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jino Taer</title>
+
+    <!-- Internal CSS styles -->
+    <style>
+        /* Resetting default margin, padding, and box-sizing for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            background-image: url(photos/pin6.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+	        background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #0b0c10;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 13px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        /* Jino's name styles */
+        .jino {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            color: beige;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Red span color */
+        span {
+            color: red;
+        }
+
+        /* Navbar styles */
+        .navbar a {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: beige;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        /* Navbar link hover and active styles */
+        .navbar a:hover,
+        .navbar a.active {
+            color: red;
+        }
+
+        /* Flex page title styles */
+        .flex {
+            color: beige;
+            margin-top: 6%;
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Home section styles */
+        .home {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        /* Container styles for images and text */
+        .container {
+            display: inline-block;
+            width: 480px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10%;
+            margin: 50px auto;
+            margin-bottom: 130px;
+            box-shadow: 0 0 10px black;
+            animation: glow 1s infinite alternate;
+        }
+
+        /* Image styles within the container */
+        .container img {
+            width: 100%;
+            height: 65vh;
+        }
+
+        /* Text overlay styles */
+        .container:hover .t {
+            top: 0;
+        }
+
+        /* Text box styles */
+        .t {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 100%;
+            height: 100%;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+            transition: all 0.4s;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #0b0c10;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Footer paragraph styles */
+        footer p {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        /* Glowing effects animation */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px beige;
+            }
+
+            100% {
+                box-shadow: 0 0 20px beige;
+            }
+        }
+
+        /* Media Query for tablets */
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 13px 5%;
+            }
+
+            .navbar a {
+                margin-right: 15px;
+            }
+
+            .home {
+                padding: 0 5%;
+            }
+        }
+
+        /* Media Query for mobile devices */
+        @media screen and (max-width: 480px) {
+            .jino {
+                font-size: 20px;
+            }
+
+            .flex {
+                font-size: 20px;
+                margin-top: 20%;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+
+            .container {
+                margin: 20px auto;
+            }
+
+            .t {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header section with Jino's name and navigation -->
+    <header class="header">
+        <h2 class="jino">jino<span>Taer.</span></h2>
+        <nav class="navbar">
+            <ul>
+                <a href="index.html">HOME</a>
+                <a href="blog entries.html">BLOG</a>
+                <a class="active" href="flex.html">FLEX</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flex page title -->
+    <h1 class="flex">FLEX'S <span>PAGE</span></h1>
+
+    <!-- Home section with image containers and text overlays -->
+    <section class="home">
+        <div class="container">
+            <img src="photos/achieve.jpg" alt="">
+            <div class="t">
+                <h2 style="margin-top: 10%; font-size: 30px;">MY ACHIEVEMENT</h2>
+                <p style="margin-top: 10%; font-size: 22px;">During my training on NC2, I joined ICT Day. On this time
+                    I joined some of the competition and I won
+                    1st place pc assembly. It’s quite hard but through the support of my friends, especially my
+                    family,it helps me to win this competition. Support and encouragement can help me to improve my skills and
+                    motivate myself to pursue this activity and it turned my hobby. Receiving this kind of achievement
+                    makes me happy and proud of myself.</p>
+            </div>
+        </div>
+        <div class="container">
+            <img src="photos/mapa.jpg" style="background-size: cover;">
+            <div class="t">
+                <h2 style="margin-top: 10%; font-size: 30px;">MY INSPIRATION</h2>
+                <p style="margin-top: 10%; font-size: 22px;">I am so grateful to my hard-working and loving mother and father.
+                    Their unwavering dedication and strength played an important role in shaping me into the person
+                     I am today. I am grateful for the countless sacrifices they made for." me, I was lucky enough 
+                     to have parents who never did." gave up my commitment to health and happiness. </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!-- Footer section with credits -->
+<footer>
+    <p>Credits &copy; 2023 Jino Taer</p>
+</footer>
+
+</html>
